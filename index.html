@@ -1,19 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu primeiro bootstrap</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/meu.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-9 col-md-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda vero eveniet voluptates facilis quo? Illo dolores rerum cupiditate non assumenda quidem consectetur, adipisci libero pariatur a reiciendis aperiam sint nesciunt?</div>
+    <nav class="navbar navbar-expand-lg navbar-info bg-transparent fixed-top">
+        <a class="navbar-brand">
+            <img class="img-thumbnail" src="sol.jpg" alt="Sol">
+        </a>
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Item 1 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Item 2</a>
+                </li>
+            </ul>
         </div>
-    </div>
-   <script src="js/jquery-3.6.0.min"></script>
-   <script src="js/bootstrap.js"></script>
+    </nav>
+    <<div class="jumbotron jumbotron-fluid bg-meu">
+
+        </div>
+        <script src="js/jquery-3.6.0.min"></script>
+        <script src="js/bootstrap.js"></script>
 </body>
+
 </html>
