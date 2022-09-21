@@ -1,18 +1,32 @@
 $(document).ready(function(){
 
-    let url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados`
-
     $.ajax({
         type: 'GET',
         dataType: 'JSON',
-        url: url,
+        url: "https://servicodados.ibge.gov.br/api/v1/localidades/estados",
         success: function(dados){
-            $('#ufs').val(dados.nome)
+            $.each(dados, function(indexInArray, valueOfElement){
+            var ufs = "<option>"+valueOfElement.sigla+"</option>"
+            $("#estado").append(ufs)
+            });
         }
-    })
-$('#estado').on('change', function(e){
+    });
+$("#estado").change (function(e){
     e.preventDefault();
+    $("#cidade").empty();
+    var uf = $("#estado").val();
 
-})
-
-})
+$.ajax({
+    type: 'GET',
+    dataType: 'JSON',
+    url: "https://servicodados.ibge.gov.br/api/v1/localidades/estados/"+uf+"/municipios",
+    data: {orderBy: "nome"},
+    success: function(dados){
+        $.each(dados, function(indexInArray, valueOfElement){
+        var cidade = "<option>"+valueOfElement.nome+"</option>"
+        $("#cidade").append(cidade)
+        });
+    }
+});
+});
+});
